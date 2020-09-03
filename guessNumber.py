@@ -40,6 +40,6 @@ def main():
     else:
         print('Sorry, you failed guess the number')
         print('The number is {}'.format(answer))
-        print()
+        print('Thank you for playing')
 
 main()
