@@ -14,7 +14,7 @@ def main():
 
 
     while chance > 0:
-        print('You have {} chance to guess a number from 0-10'.format(chance))
+        print('You have {} chances to guess a number from 0-10'.format(chance))
         guess = input('Choose a number from 0-10. Enter your guess: ')
         print()
 
@@ -34,6 +34,7 @@ def main():
 
         except:
             print('You have to choose a number, not alphabet')
+            chance += 1
         chance -= 1
 
     else:
