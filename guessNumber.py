@@ -42,17 +42,17 @@ def main(): # the games
                     break # exit from while loop
 
                 elif guess > answer: # if user input larger number than the answer
-                    print('Your guess is higher than the answer.')
+                    print('Your guess is higher than the answer\n')
                 elif guess < answer: # if user input smaller number than the answer
-                    print('Your guess is lower than the answer')
+                    print('Your guess is lower than the answer\n')
 
         except: # if failed to try convert string to integer
-            print('You have to choose a number, not alphabet')
+            print('You have to choose a number, not alphabet or symbol\n')
             chance += 1 # it used in order makes chances not changed
         chance -= 1
 
     else: # if user have no chances again
-        print('\nSorry, you failed guess the number')
+        print('Sorry, you failed guess the number')
         print('The number is {}'.format(answer)) # tell user the answer
 
     asks_user()
