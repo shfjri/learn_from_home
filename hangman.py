@@ -173,7 +173,10 @@ def main():
 
         user_answer = input('\nEnter your answer: ')
         if user_answer.isalpha() == True:
-            if user_answer == answer:
+            if user_answer in answer:
+                new_closed_answer = new_closed_answer.replace(new_closed_answer[answer.index(user_answer), user_answer])
+                print(new_closed_answer)
+            elif user_answer == answer:
                 print('\nYou won the game!')
                 print('The city is {}'.format(answer))
                 break
@@ -192,6 +195,6 @@ def main():
     asks_play_again()
 
 # main()
+
 kota = 'jakarta'
-kota_ = '*******'
-print(kota_.replace(kota_[kota.index('j')], 'a'))
+print('a' in kota)

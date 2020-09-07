@@ -24,13 +24,13 @@ def asks_play_again(): # function to asks user, want to play again or exit from 
 def asks_clue():
 
 
-    clue = [j for j in (city_dict[answer])]
+    clues = [clue for clue in (member_dict[answer])]
 
     asks = input('\nDo you need more clue [y/n] ? ')
     if asks.isalpha() == True:
         asks = asks.lower()
         if asks == 'y':
-            print(clue[chances-1])
+            print(clues[chances-1])
         elif asks == 'n':
             pass
     else:
@@ -44,40 +44,48 @@ def main():
 
     print('This game made by {}\n'.format(author))
 
-    global chances, city_dict, answer
+    global chances, member_dict, answer
 
     chances = 3
 
-    jakarta = ['monas', 'kembang goyang', 'banjir']
-    bandung = ['ciwidey', 'batagor', 'kembang']
-    bogor = ['puncak', 'asinan', 'hujan']
-    garut = ['papandayan','dodol', 'domba']
+    chika = ['mata coklat', 'next shani', 'crikaya']
+    cinhap = ['psikologi', 'aurora', 'makboss']
+    azizi = ['jamaah', 'tomboy', 'little monsters']
+    shani = ['sempurna','center', 'jogja']
+    beby = ['kapten', 'bandung', 'bytwin']
+    nadila = ['akustik', 'kidal', 'groomy']
+    anin = ['triple team', 'tiktok', 'mamah muda']
 
-    city_dict = {'jakarta': jakarta,
-                 'bandung': bandung,
-                 'bogor' : bogor,
-                 'garut' : garut}
-    city = [key for key in city_dict.keys()]
-    answer = choice(city)
+    member_dict = {'Chika' : chika,
+                   'Cinhap' : cinhap,
+                   'Azizi' : azizi,
+                   'Shani' : shani,
+                   'Beby' : beby,
+                   'Nadila' : nadila,
+                   'Anin' : anin}
+    member = [key for key in member_dict.keys()]
+    answer = choice(member)
     closed_answer = answer[:]
 
     print('Welcome to the game!')
-    print('This is a game that you should guess a city in Indonesia')
+    print('This is a game that you should guess a member in JKT48')
 
     new_closed_answer = ''
     for i in range(len(closed_answer)):
         new_closed_answer += closed_answer[i].replace(closed_answer[i], '*')
-    print('\nThe city is {}\n'.format(new_closed_answer))
+    print('\nThe answer is {}\n'.format(new_closed_answer))
 
     while chances > 0:
-        print('You have {} chances to asks a clue and guess a city in Indonesia'.format(chances))
+        print('You have {} chances to asks a clue and guess a member in JKT48'.format(chances))
 
         asks_clue()
 
         user_answer = input('\nEnter your answer: ')
         if user_answer.isalpha() == True:
+            user_answer = user_answer.title()
             if user_answer == answer:
                 print('\nYou won the game!')
+                print('The city is {}'.format(answer))
                 break
             else:
                 print('\nYou enter a wrong answer')
