@@ -21,7 +21,7 @@ def asks_help_again(): # function to asks user, need more help or exit
         print('\nYou have to choose a letter in option, not number or symbols')
         asks_help_again() # asks user again, need more help or exit
 
-    return play
+    return None
 
 
 def kinetic():
@@ -35,7 +35,7 @@ def kinetic():
     except:
         print('\nYou have to input a number\n')
         kinetic()
-    return K
+    return None
 
 
 def potential():
@@ -51,7 +51,7 @@ def potential():
         print('\nYou have to input a number\n')
         potential()
 
-    return V
+    return None
 
 
 def choice():
@@ -73,7 +73,7 @@ def choice():
         print('Your input is not alphabet') # if user's input not alphabet
         choice() # asks user again
 
-    return user_choice
+    return None
 
 
 def main():
